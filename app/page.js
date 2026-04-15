@@ -22,9 +22,15 @@ export default function Home() {
     <>
       <div className="showArea">{mode === "Fridge" && <Fridge items={items} />}</div>
       <div className="menu">
-        <button onClick={() => setMode("Fridge")}>F</button>
-        <button onClick={() => setMode("Kitchen")}>K</button>
-        <button onClick={() => setMode("Eat")}>E</button>
+        <button className={mode === "Fridge" ? "menuActive" : ""} onClick={() => setMode("Fridge")}>
+          <img src="/fridge.svg" />
+        </button>
+        <button className={mode === "Kitchen" ? "menuActive" : ""} onClick={() => setMode("Kitchen")}>
+          <img src="pan.svg" />
+        </button>
+        <button className={mode === "Meal" ? "menuActive" : ""} onClick={() => setMode("Meal")}>
+          <img src="meal.svg" />
+        </button>
       </div>
     </>
   );

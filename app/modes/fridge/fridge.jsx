@@ -7,19 +7,12 @@ export default function Fridge({ items }) {
       <div className="fridgeHeader">
         <div className="greetings">
           <h1>Fridge</h1>
-          <p>Manage your items</p>
-        </div>
-        <div className="fridgeMenu">
-          <button>All items</button>
-          <button>Proteins</button>
-          <button>Carbs</button>
-          <button>Fats</button>
-          <button>+</button>
+          <p>You have: {items.length} items</p>
         </div>
       </div>
-      <div className="contentArea">
-        <FridgeItems items={items} />
-      </div>
+      <button className="addItemsButton">Add items</button>
+
+      <FridgeItems items={items} />
     </div>
   );
 }
