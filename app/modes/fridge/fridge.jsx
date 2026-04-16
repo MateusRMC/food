@@ -1,7 +1,11 @@
 "use client";
+import { useState } from "react";
 import FridgeItems from "./fridgeItems";
+import AddItemForm from "@/app/components/addItemForm";
 
-export default function Fridge({ items }) {
+export default function Fridge({ items, getItems }) {
+  const [toggleAddItems, setToggleAddItems] = useState(false);
+
   return (
     <div className="fridgeContainer">
       <div className="fridgeHeader">
@@ -10,9 +14,23 @@ export default function Fridge({ items }) {
           <p>You have: {items.length} items</p>
         </div>
       </div>
-      <button className="addItemsButton">Add items</button>
-
-      <FridgeItems items={items} />
+      <div className="fridgeContentContainer">
+        <button className="toggleAddItems" onClick={() => setToggleAddItems(true)}>
+          +
+        </button>
+        {toggleAddItems ? (
+          <div className="overlay">
+            <AddItemForm
+              toggleAddItems={toggleAddItems}
+              setToggleAddItems={setToggleAddItems}
+              getItems={getItems}
+            />
+          </div>
+        ) : (
+          ""
+        )}
+        <FridgeItems items={items} />
+      </div>
     </div>
   );
 }

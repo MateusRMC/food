@@ -3,8 +3,7 @@
 export default function FridgeItems({ items }) {
   return (
     <div className="itemsList">
-      <h3>Items</h3>
-      <br />
+      <h3 style={{ margin: "10px" }}>Items</h3>
       <div className="fridgeMenu">
         <button>All items</button>
         <button>Proteins</button>

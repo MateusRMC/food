@@ -9,6 +9,10 @@ $text2: whitesmoke;
   padding: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   background-color: $bg;
   color: $text;
@@ -85,6 +89,52 @@ body {
   padding: 10px;
 }
 
+.fridgeContentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  inset: 0;
+  background-color: $bg;
+  z-index: 999;
+}
+
+.addItemForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.addItemForm input {
+  width: 80%;
+  margin: 2px auto;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.addItemForm input[type="submit"] {
+  background-color: $accent;
+  color: $text2;
+  margin: 10px auto;
+}
+
+.dismiss {
+  text-align: center;
+  margin: 20px auto;
+  width: 60%;
+  color: $secondary;
+}
+
+/* fridgeItems */
+
 .fridgeMenu {
   display: flex;
   flex-direction: row;
@@ -100,16 +150,6 @@ body {
   cursor: pointer;
 }
 
-.contentArea {
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  flex: 1;
-}
-
-/* fridgeItems */
-
 .fridgeItems {
   display: flex;
   flex-direction: column;
@@ -120,8 +160,9 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  scrollbar-width: none;
   gap: 5px;
-  width: 95%;
+  width: 100%;
   margin: auto;
 }
 
@@ -159,4 +200,30 @@ body {
 .macroContainer::first-letter {
   font-weight: bold;
   color: #808080;
+}
+
+/* DESKTOP AND IPAD */
+
+@media screen and (orientation: landscape) {
+  .main {
+    flex-direction: row-reverse;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .fridgeContentContainer {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .addItemForm {
+    width: 50%;
+  }
+
+  .itemsList {
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
 }

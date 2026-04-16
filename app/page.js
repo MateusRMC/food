@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="showArea">{mode === "Fridge" && <Fridge items={items} />}</div>
+      <div className="showArea">{mode === "Fridge" && <Fridge items={items} getItems={getItems} />}</div>
       <div className="menu">
         <button className={mode === "Fridge" ? "menuActive" : ""} onClick={() => setMode("Fridge")}>
           <img src="/fridge.svg" />
