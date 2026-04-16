@@ -23,12 +23,12 @@ export default function AddItemForm({ getItems, toggleAddItems, setToggleAddItem
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: itemName,
-          kcal: Number(itemKcal) * rate,
-          fat: Number(itemFat) * rate,
-          carb: Number(itemCarb) * rate,
-          protein: Number(itemProtein) * rate,
-          potassium: itemPotassium ? Number(itemPotassium) * rate : "",
-          sodium: itemSodium ? Number(itemSodium) * rate : "",
+          kcal: Number((Number(itemKcal) * rate).toFixed(1)),
+          fat: Number((Number(itemFat) * rate).toFixed(1)),
+          carb: Number((Number(itemCarb) * rate).toFixed(1)),
+          protein: Number((Number(itemProtein) * rate).toFixed(1)),
+          potassium: itemPotassium ? Number((Number(itemPotassium) * rate).toFixed(1)) : "",
+          sodium: itemSodium ? Number((Number(itemSodium) * rate).toFixed(1)) : "",
         }),
       });
 
