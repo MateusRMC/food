@@ -15,8 +15,12 @@ export default function Fridge({ items, getItems }) {
         </div>
       </div>
       <div className="fridgeContentContainer">
-        <button className="toggleAddItems" onClick={() => setToggleAddItems(true)}>
-          Add new item
+        <button
+          className="toggleAddItems"
+          onClick={() => setToggleAddItems(true)}
+          aria-label="Adicionar"
+        >
+          +
         </button>
         {toggleAddItems ? (
           <div className="overlay">

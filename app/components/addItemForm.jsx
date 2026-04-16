@@ -40,7 +40,7 @@ export default function AddItemForm({ getItems, toggleAddItems, setToggleAddItem
       setItemProtein("");
       setItemPotassium("");
       setItemSodium("");
-      toggleAddItems(false);
+      setToggleAddItems(false);
 
       await getItems();
     } catch (error) {
