@@ -95,6 +95,18 @@ body {
   width: 100%;
 }
 
+.toggleAddItems {
+  position: fixed;
+  right: 50%;
+  transform: translate(50%);
+  bottom: 12%;
+  background-color: $accent;
+  color: $text2;
+  padding: 10px 40px;
+  border-radius: 999px;
+  border: none;
+}
+
 .overlay {
   position: fixed;
   display: flex;
@@ -109,6 +121,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .addItemForm input {
@@ -216,10 +230,6 @@ body {
   .fridgeContentContainer {
     flex-direction: row;
     width: 100%;
-  }
-
-  .addItemForm {
-    width: 50%;
   }
 
   .itemsList {

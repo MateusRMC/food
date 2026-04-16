@@ -16,7 +16,7 @@ export default function Fridge({ items, getItems }) {
       </div>
       <div className="fridgeContentContainer">
         <button className="toggleAddItems" onClick={() => setToggleAddItems(true)}>
-          +
+          Add new item
         </button>
         {toggleAddItems ? (
           <div className="overlay">
